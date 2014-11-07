@@ -9,15 +9,15 @@ module Lab3 where
 -- ===================================
 
 evens :: [Integer] -> [Integer]
-evens = undefined
+evens xs = [x | x <- xs, even x]
 
 -- ===================================
--- Ex. 3 - 4 
+-- Ex. 3 - 4
 -- ===================================
 
 -- complete the following line with the correct type signature for this function
--- squares :: ... 
-squares n = undefined
+squares :: Integer -> [Integer]
+squares n = [x * x | x <- [1..n] ]
 
 sumSquares :: Integer -> Integer
 sumSquares n = sum (squares n)
