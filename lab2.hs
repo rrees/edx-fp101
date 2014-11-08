@@ -9,28 +9,33 @@ module Lab2 where
 -- ===================================
 
 toDigits :: Integer -> [Integer]
-toDigits = undefined
+toDigits n
+    | n < 9 = [n]
+    | otherwise = (toDigits (div n 10)) ++ [(mod n 10)]
 
 -- ===================================
 -- Ex. 1
 -- ===================================
 
 toDigitsRev :: Integer -> [Integer]
-toDigitsRev = undefined
-
+toDigitsRev n = (reverse . toDigits) n
 -- ===================================
 -- Ex. 2
 -- ===================================
 
 doubleSecond :: [Integer] -> [Integer]
-doubleSecond = undefined
+doubleSecond (x:xs)
+    | length xs == 0 = []
+    | length xs == 1 = [2 * (last xs)]
+    | otherwise = (2 * (head xs)) : (doubleSecond (tail xs))
 
 -- ===================================
 -- Ex. 3
 -- ===================================
 
 sumDigits :: [Integer] -> Integer
-sumDigits = undefined
+sumDigits (n:[]) = n
+sumDigits (n:ns) = n + sumDigits(ns)
 
 
 -- ===================================
