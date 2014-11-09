@@ -24,18 +24,20 @@ toDigitsRev n = (reverse . toDigits) n
 -- ===================================
 
 doubleSecond :: [Integer] -> [Integer]
+doubleSecond [] = []
 doubleSecond (x:xs)
-    | length xs == 0 = []
-    | length xs == 1 = [2 * (last xs)]
-    | otherwise = (2 * (head xs)) : (doubleSecond (tail xs))
+    | xs == [] = [x]
+    | otherwise = x : (2 * (head xs)) : (doubleSecond (tail xs))
 
 -- ===================================
 -- Ex. 3
 -- ===================================
 
 sumDigits :: [Integer] -> Integer
-sumDigits (n:[]) = n
-sumDigits (n:ns) = n + sumDigits(ns)
+sumDigits [] = 0
+sumDigits (n:ns)
+    | n < 10 = n + sumDigits(ns)
+    | otherwise = (sum (toDigits n)) + sumDigits(ns)
 
 
 -- ===================================
