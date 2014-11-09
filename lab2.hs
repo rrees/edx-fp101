@@ -45,7 +45,8 @@ sumDigits (n:ns)
 -- ===================================
 
 isValid :: Integer -> Bool
-isValid = undefined
+isValid i = let checksum = (sumDigits . doubleSecond . toDigitsRev) i
+    in (mod checksum 10) == 0
 
 
 -- ===================================
