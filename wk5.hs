@@ -24,7 +24,7 @@ msort xs = my_merge (msort ys) (msort zs)
 	where (ys, zs) = halve xs
 
 (^^^) :: Integer -> Integer -> Integer
-m ^^^ 0 = 0
+m ^^^ 0 = 1
 m ^^^ n = m * m ^^^ (n - 1)
 
 
