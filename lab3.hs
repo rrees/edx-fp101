@@ -28,7 +28,8 @@ sumSquares n = sum (squares n)
 
 -- complete the following line with the correct type signature for this function
 -- squares' :: ...
-squares' m n = undefined
+squares' :: Integer -> Integer -> [Integer]
+squares' m n = [x * x | x <- [n..(m+n)], x > n]
 
 sumSquares' :: Integer -> Integer
 sumSquares' x = sum . uncurry squares' $ (x, x)
