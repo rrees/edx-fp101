@@ -17,3 +17,7 @@ safetail
 		case xs of
 			[] -> []
 			(_:xs) -> xs
+
+(&&&) :: Bool -> Bool -> Bool
+True &&& True = True
+_ &&& _ = False

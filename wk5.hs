@@ -22,3 +22,14 @@ msort [] = []
 msort [x] = [x]
 msort xs = my_merge (msort ys) (msort zs)
 	where (ys, zs) = halve xs
+
+(^^^) :: Integer -> Integer -> Integer
+m ^^^ 0 = 0
+m ^^^ n = m * m ^^^ (n - 1)
+
+
+my_and :: [Bool] -> Bool
+my_and [] = True
+my_and (b:bs)
+	| b = and bs
+	| otherwise = False
