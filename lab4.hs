@@ -52,4 +52,7 @@ euclid (x, y)
 -- ===================================
 
 funkyMap :: (a -> b) -> (a -> b) -> [a] -> [b]
-funkyMap f g xs = undefined
+funkyMap f g [] = []
+funkyMap f g [x] = f x : funkyMap f g []
+funkyMap f g (x:xs) = f x : g (head xs) : funkyMap f g (tail xs)
+
