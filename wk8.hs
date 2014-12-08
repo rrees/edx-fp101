@@ -17,6 +17,6 @@ get :: String -> IO String
 
 get xs
 	= do x <- getChar
-         case x of 
+		case x of 
 			'\n' -> return xs
 			_ -> get (x : xs)
